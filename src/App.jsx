@@ -15,10 +15,10 @@ function App() {
     <>
       <ToastContainer />
       <Routes>
-        {/* <Route path="/" element={<Navigate to="/todoList/homepage" />} /> */}
+        <Route path="/" element={<Navigate to="/todoList/homepage" />} />
         <Route path="/todoList/homepage" element={<Homepage />} />
         <Route path="/todoList/login" element={<Login />} />
-        <Route path="/" element={<Register />} />
+        <Route path="/todoList/register" element={<Register />} />
         <Route path="/todoList/forgotPassword" element={<ForgotPassword />} />
 
         <Route element={<TodoListLayout />}>
