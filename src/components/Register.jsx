@@ -81,7 +81,7 @@ const Register = () => {
         setIsStep1Complete(true); // Move to step 2
       } catch (err) {
         console.error(err.response?.data?.msg || err.message);
-        toast.error(err.response?.data?.msg || "Registration failed. Please try again." || "Network error. Please try again later.");
+        toast.error(err.response?.data?.msg || "Registration failed. Please try again.");
       } finally {
         setLoading(false);
       }
