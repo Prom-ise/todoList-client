@@ -49,10 +49,8 @@ const Login = () => {
         localStorage.setItem("token", token);
         navigate("/todoList/todo-list");
       } catch (err) {
-        console.error(err.response.data);
-        toast.error(
-          err.response.data
-        );
+        console.error(err.response?.data?.msg || err.message);
+        toast.error(err.response?.data?.msg || "An error occurred. Please try again.");
       }
     },
   });
