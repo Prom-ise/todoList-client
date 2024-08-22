@@ -6,6 +6,7 @@ import Greeting from "./Greeting";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { MdEdit, MdDelete } from "react-icons/md";
+import Loader from "./Loader"; 
 
 const TodoList = () => {
   const uri = "https://todolist-server-api.onrender.com/todoList/todos";
@@ -72,7 +73,7 @@ const TodoList = () => {
     // fetchUser();
   }, []);
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="text-center text-4xl place-items-center mt-[2em]">Loading... <Loader /> </p>;
   }
 
   const onChange = (e) => {
