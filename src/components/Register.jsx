@@ -80,8 +80,8 @@ const Register = () => {
         toast.success("Registration successful! Check your email for the verification code.");
         setIsStep1Complete(true); // Move to step 2
       } catch (err) {
-        console.error(err.response.data);
-        toast.error(err.response.data || "Registration failed. Please try again." || "Network error. Please try again later.");
+        console.error(err.response?.data?.msg || err.message);
+        toast.error(err.response?.data?.msg || "Registration failed. Please try again." || "Network error. Please try again later.");
       } finally {
         setLoading(false);
       }
