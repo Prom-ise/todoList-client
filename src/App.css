@@ -860,16 +860,18 @@ details[open] summary {
 .file-uploaded {
   box-sizing: border-box;
   border: none;
-  border-left: 2px solid #007bff;
-  /* overflow-y: auto;  */
-  max-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  max-height: 100vh;
   width: 100%;
   padding: 10px;
 }
 .upload-form {
   margin: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* position: fixed; */
   box-sizing: border-box;
   border: none;
@@ -1014,8 +1016,10 @@ details[open] summary {
   stroke: #007bff;
 }
 .uploaded-files {
-  width: 500px;
-  height: 350px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 250px !important;
+  height: 100%;
   margin: 1em;
 }
 .uploaded-files-container {
@@ -1099,7 +1103,14 @@ details[open] summary {
     font-size: 12px;
   }
 }
-
+@media (max-width: 440px){
+  .greetings {
+    height: 15vh;
+  }
+  .greeting-quote{
+    font-size: 13px;
+  }
+}
 @media (max-width: 380px) {
   .fixed-bottom-form {
     display: block !important;

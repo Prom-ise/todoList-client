@@ -149,6 +149,7 @@ const FileUpload = () => {
       <div className="file-uploads">
         <div className="upload-form">
           <div>
+          <div>
           {uploadProgress > 0 && (
             <div className="progress-bar-container my-3 mb-3">
               <div class="progress-bar" style={{ width: `${uploadProgress}%` }}>
@@ -269,6 +270,7 @@ const FileUpload = () => {
               </button>
             </div>
           </form>
+          </div>
         </div>
 
         <div className="file-uploaded">
