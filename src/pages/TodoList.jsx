@@ -8,7 +8,7 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import { MdEdit, MdDelete } from "react-icons/md";
 
 const TodoList = () => {
-  const uri = "https://todo-list-api-mu.vercel.app/todoList/todos";
+  const uri = "https://todolist-server-api.onrender.com/todoList/todos";
   let navigate = useNavigate();
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user"))

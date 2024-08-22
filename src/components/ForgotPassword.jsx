@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://todo-list-api-mu.vercel.app/todoList/forgot-password",
+        "https://todolist-server-api.onrender.com/todoList/forgot-password",
         { email }
       );
       console.log(res.data);
@@ -30,7 +30,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://todo-list-api-mu.vercel.app/todoList/reset-password",
+        "https://todolist-server-api.onrender.com/todoList/reset-password",
         { email, verificationCode, newPassword }
       );
       console.log(res.data);

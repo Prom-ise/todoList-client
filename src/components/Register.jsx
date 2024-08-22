@@ -19,7 +19,7 @@ const Register = () => {
       const user = result.user;
 
       // Send user data to backend
-      const res = await axios.post("https://todo-list-api-mu.vercel.app/todoList/google-login", {
+      const res = await axios.post("https://todolist-server-api.onrender.com/todoList/google-login", {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
@@ -72,7 +72,7 @@ const Register = () => {
     onSubmit: async (values) => {
       const newUser = values;
       try {
-        const res = await axios.post("https://todo-list-api-mu.vercel.app/todoList/register", newUser);
+        const res = await axios.post("https://todolist-server-api.onrender.com/todoList/register", newUser);
         console.log(res.data);
         toast.success("Registration successful! Check your email for the verification code.");
         setIsStep1Complete(true); // Move to step 2
@@ -86,7 +86,7 @@ const Register = () => {
   const onVerify = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://todo-list-api-mu.vercel.app/todoList/verify-email", {
+      const res = await axios.post("https://todolist-server-api.onrender.com/todoList/verify-email", {
         email: formik.values.email,
         verificationCode: formik.values.verificationCode,
       });

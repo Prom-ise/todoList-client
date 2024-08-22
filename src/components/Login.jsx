@@ -10,7 +10,7 @@ import logo from '../assets/todoListLogo.png'
 
 const Login = () => {
   const navigate = useNavigate();
-  const URL = "https://todo-list-api-mu.vercel.app/todoList/login";
+  const URL = "https://todolist-server-api.onrender.com/todoList/login";
 
   const handleGoogleLogin = async () => {
     try {
@@ -18,7 +18,7 @@ const Login = () => {
       const user = result.user;
 
       // Send user data to backend
-      const res = await axios.post("https://todo-list-api-mu.vercel.app/todoList/google-login", {
+      const res = await axios.post("https://todolist-server-api.onrender.com/todoList/google-login", {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,

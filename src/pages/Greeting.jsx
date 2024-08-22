@@ -70,7 +70,7 @@ const Greeting = () => {
       return;
     }
 
-    const url = "http://localhost:7000/todoList/todos"; 
+    const url = "https://todolist-server-api.onrender.com/todoList/todos"; 
     axios
       .get(url, {
         headers: {
@@ -103,7 +103,7 @@ const Greeting = () => {
   useEffect(() => {
     const fetchQuote = async () => {
       try {
-        const response = await fetch('http://localhost:7000/todoList/quote');
+        const response = await fetch('https://todolist-server-api.onrender.com/todoList/quote');
         const data = await response.json();
         setDailyQuote(data[0].q);  
       } catch (error) {

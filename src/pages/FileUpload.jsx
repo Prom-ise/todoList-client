@@ -10,8 +10,8 @@ const FileUpload = () => {
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user"))
   );
-  const uploadUri = "http://localhost:7000/uploadList/upload";
-  const filesUri = "http://localhost:7000/uploadList/files";
+  const uploadUri = "https://todolist-server-api.onrender.com/uploadList/upload";
+  const filesUri = "https://todolist-server-api.onrender.com/uploadList/files";
   const [files, setFiles] = useState(null);
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
@@ -123,7 +123,7 @@ const FileUpload = () => {
     if (confirmed) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:7000/uploadList/files/${fileId}`, {
+        await axios.delete(`https://todolist-server-api.onrender.com/uploadList/files/${fileId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -325,7 +325,7 @@ const FileUpload = () => {
                             </div>
                             <img
                               className="uploaded-files"
-                              src={`http://localhost:7000/${file.filePath}`}
+                              src={`https://todolist-server-api.onrender.com/${file.filePath}`}
                               alt={file.fileName}
                             />
                             <p>{file.description}</p>
@@ -364,7 +364,7 @@ const FileUpload = () => {
                             <audio controls>
                               <source
                                 className="uploaded-files"
-                                src={`http://localhost:7000/${file.filePath}`}
+                                src={`https://todolist-server-api.onrender.com/${file.filePath}`}
                                 type={file.fileType}
                               />
                               Your browser does not support the audio element.
@@ -405,7 +405,7 @@ const FileUpload = () => {
                             <video controls>
                               <source
                                 className="uploaded-files"
-                                src={`http://localhost:7000/${file.filePath}`}
+                                src={`https://todolist-server-api.onrender.com/${file.filePath}`}
                                 type={file.fileType}
                               />
                               Your browser does not support the video element.
