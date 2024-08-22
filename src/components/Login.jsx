@@ -52,7 +52,7 @@ const Login = () => {
         navigate("/todoList/todo-list");
       } catch (err) {
         console.error(err.response?.data?.msg || err.message);
-        toast.error(err.message || "An error occurred. Please try again.");
+        toast.error(err.msg || "An error occurred. Please try again.");
       } finally {
         setLoading(false);
       }

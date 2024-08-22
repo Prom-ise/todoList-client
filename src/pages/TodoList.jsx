@@ -225,7 +225,7 @@ const TodoList = () => {
         {activeSection === "todoList" && (
           <div className="mb-[4em]">
             {loading ? (
-              <p>Loading todos...</p>
+              <p className="text-center text-4xl place-items-center mt-[2em]">Loading todos... <Loader /> </p>
             ) : (
               <ul>
                 {filteredTodos.length === 0 ? (

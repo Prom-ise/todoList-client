@@ -99,7 +99,7 @@ const Register = () => {
       navigate("/todoList/login");
     } catch (err) {
       console.error(err.response.data || err.message);
-      toast.error(err.response.data || err.message);
+      toast.error(err.message);
     }
   };
 
@@ -301,8 +301,8 @@ const Register = () => {
             <span>Verification Code</span>
           </label>
 
-          <button className="submit" type="submit">
-            Verify Email
+          <button className="submit" type="submit" disabled={loading}>
+          {loading ? <Loader /> : "Verify Email"}
           </button>
         </form>
       )}

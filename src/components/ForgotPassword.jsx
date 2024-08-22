@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Loader from "./Loader"; 
 
 const ForgotPassword = () => {
+  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
@@ -11,6 +13,7 @@ const ForgotPassword = () => {
   const [step, setStep] = useState(1);
 
   const onEmailSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const res = await axios.post(
@@ -23,11 +26,14 @@ const ForgotPassword = () => {
     } catch (err) {
       console.error(err.response?.data?.msg || err.message);
       toast.error(err.message || "An error occured in sending your email");
+    } finally {
+      setLoading(false);
     }
   };
 
   const onVerifyAndReset = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await axios.post(
         "https://todolist-server-api.onrender.com/todoList/reset-password",
@@ -39,6 +45,8 @@ const ForgotPassword = () => {
     } catch (err) {
       console.error(err.response?.data?.msg || err.message);
       toast.error(err.response?.data?.msg || "An error occurred, pls try again");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,11 +77,11 @@ const ForgotPassword = () => {
                 />
               </div>
               <div className="col-span-full">
-                <input
+                <button
                   type="submit"
-                  value="Send Verification Code"
+                  disabled={loading}
                   className="items-center cursor-pointer justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-blue-600 border-2 border-blue-600 rounded-full inline-flex hover:bg-transparent hover:border-blue-600 hover:text-blue-600 focus:outline-none focus-visible:outline-blue-600 focus-visible:ring-blue-600 font-bold text-2xl"
-                />
+                >{loading ? <Loader /> : "Send Verification Code"}</button>
               </div>
               
             </div>
@@ -105,11 +113,10 @@ const ForgotPassword = () => {
                 />
               </div>
               <div className="col-span-full">
-                <input
+                <button
                   type="submit"
-                  value="Reset Password"
                   className="items-center cursor-pointer justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
-                />
+                >{loading ? <Loader /> : "Reset Password"}</button>
               </div>
             </div>
           </form>
