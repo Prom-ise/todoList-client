@@ -304,7 +304,6 @@ const FileUpload = () => {
             </div>
           
             <div>
-           
               {activeSection === "images" && (
                 <div className="uploaded-files-container">
                   {loading ? (
