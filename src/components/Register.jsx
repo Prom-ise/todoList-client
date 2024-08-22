@@ -7,8 +7,10 @@ import { signInWithPopup } from "firebase/auth";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import logo from '../assets/todoListLogo.png';
+import Loader from "./Loader"; 
 
 const Register = () => {
+  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
   const [isVerified, setIsVerified] = useState(false);
   const [isStep1Complete, setIsStep1Complete] = useState(false); // New state for step 1 completion
@@ -71,6 +73,7 @@ const Register = () => {
     }),
     onSubmit: async (values) => {
       const newUser = values;
+      setLoading(true);
       try {
         const res = await axios.post("https://todolist-server-api.onrender.com/todoList/register", newUser);
         console.log(res.data);
@@ -78,7 +81,9 @@ const Register = () => {
         setIsStep1Complete(true); // Move to step 2
       } catch (err) {
         console.error(err.response.data);
-        toast.error(err.response.data);
+        toast.error(err.response.data || "Registration failed. Please try again." || "Network error. Please try again later.");
+      } finally {
+        setLoading(false);
       }
     },
   });
@@ -186,8 +191,8 @@ const Register = () => {
             ) : null}
           </label>
 
-          <button className="submit" type="submit">
-            Register
+          <button className="submit" type="submit" disabled={loading}>
+          {loading ? <Loader /> : "Register"}
           </button>
           <p className="signin">
             Already have an account?{" "}

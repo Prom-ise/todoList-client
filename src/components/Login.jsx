@@ -6,9 +6,11 @@ import { auth, googleProvider } from "../components/Firebase";
 import { signInWithPopup } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "./Loader"; 
 import logo from '../assets/todoListLogo.png'
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const URL = "https://todolist-server-api.onrender.com/todoList/login";
 
@@ -42,6 +44,7 @@ const Login = () => {
       password: "",
     },
     onSubmit: async (values) => {
+      setLoading(true);
       try {
         const res = await axios.post(URL, values);
         toast.success("Login Successfully");
@@ -51,6 +54,8 @@ const Login = () => {
       } catch (err) {
         console.error(err.response?.data?.msg || err.message);
         toast.error(err.response?.data?.msg || "An error occurred. Please try again.");
+      } finally {
+        setLoading(false); // Reset loading state
       }
     },
   });
@@ -72,6 +77,7 @@ const Login = () => {
             className='input'
             onChange={formik.handleChange}
             value={formik.values.email}
+            required
           />
     </div>
     <div className="input-box">
@@ -83,6 +89,7 @@ const Login = () => {
             className='input'
             onChange={formik.handleChange}
             value={formik.values.password}
+            required
           />
     </div>
     <div className="remember-forgot">
@@ -91,7 +98,13 @@ const Login = () => {
           Forgot Password?
         </NavLink>
     </div>
-    <button type="submit" className="btn text-white bg-blue-500 hover:bg-blue-700 border border-blue-700 rounded transition ease-in duration-200 py-2 mb-1" >Login</button> 
+    <button
+            type="submit"
+            className="bttn "
+            disabled={loading}
+          >
+            {loading ? <Loader /> : "Login"}
+          </button>
     <div className="button-group">
     <div className="flex justify-between">
       <div className='border-bottom'></div>

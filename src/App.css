@@ -28,6 +28,24 @@ body {
 ::-webkit-scrollbar-thumb:active {
   background: #007bff;
 }
+/* <-----------LOADER STYLING---------> */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  color: white;
+  animation: spin 1s linear infinite;
+  font-size: 30px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 /* <---------HOMEPAGE STYLE---------> */
 .homepage {
@@ -263,7 +281,7 @@ body {
     rgb(253, 253, 253) 97%,
     rgb(255, 255, 255) 97%
   );
-  backdrop-filter: blur(9px);
+  /* backdrop-filter: blur(9px); */
   color: #007bff;
   border-radius: 12px;
   padding: 30px 40px;
@@ -290,11 +308,11 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  border: 2px solid rgba(6, 27, 212, 0.2);
+  border: 2px solid #007bff;
   border-radius: 40px;
-  font-size: 16px;
-  color: #007bff;
-  padding: 20px 45px 20px 20px;
+  font-size: 20px;
+  color: #020202;
+  padding: 20px 20px 20px 20px;
 }
 .login-page .input-box input::placeholder {
   color: #007bff;
@@ -308,8 +326,9 @@ body {
   margin-top: 1em;
 }
 .remember-forgot label input {
-  accent-color: #007bff;
+  /* accent-color: #007bff; */
   margin-right: 3px;
+  font-weight: 600;
 }
 .remember-forgot a {
   /* color: #007bff; */
@@ -318,23 +337,23 @@ body {
 .remember-forgot a:hover {
   text-decoration: underline;
 }
-.wrapper .btn {
-  width: 150px;
+.wrapper .bttn {
+  width: 100%;
+  max-width: 500px;
   transition: .3s;
   height: 45px;
   background: #007bff;
   border: none;
   outline: none;
   border-radius: 40px;
+  color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  font-size: 16px;
-  /* color: #390efc; */
+  font-size: 20px;
   font-weight: 600;
-  margin-left: 90px;
   margin-top: 10px;
 }
-.wrapper .btn:active{
+.wrapper .bttn:active{
   scale: 0.9;
 }
 .wrapper .register-link {
