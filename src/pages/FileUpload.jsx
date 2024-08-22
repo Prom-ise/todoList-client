@@ -147,6 +147,7 @@ const FileUpload = () => {
     <div className="file-upload">
       <Greeting user={user} />
       <div className="file-uploads">
+        <div className="flex justify-between">
         <div className="upload-form">
           <div>
           <div>
@@ -422,6 +423,7 @@ const FileUpload = () => {
               )}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
