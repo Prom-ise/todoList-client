@@ -817,6 +817,11 @@ details[open] summary {
   justify-content: center;
   align-items: center;
 }
+.file-uploadss{
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+}
 
 .progress-bar-container {
   display: flex;
