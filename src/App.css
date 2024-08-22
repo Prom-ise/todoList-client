@@ -42,10 +42,13 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* <---------HOMEPAGE STYLE---------> */
 .homepage {
@@ -53,12 +56,12 @@ body {
 }
 
 /* <---------Register page---------> */
-.register-page{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background-color: #007bff;
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #007bff;
 }
 .register-page .form {
   display: flex;
@@ -69,20 +72,20 @@ body {
   padding: 10px 20px 20px 20px;
   border-radius: 10px;
   position: relative;
-  transition: .3s;
+  transition: 0.3s;
 }
-.register-page .app-name{
-	color: #007bff;
-	display: flex;
-	gap: 20px;
+.register-page .app-name {
+  color: #007bff;
+  display: flex;
+  gap: 20px;
 }
-.register-page .register-logo{
-	width: 40px;
-	height: 40px;
+.register-page .register-logo {
+  width: 40px;
+  height: 40px;
 }
-.register-page .p{
-	margin-top: 0.5em;
-	font-family: cursive;
+.register-page .p {
+  margin-top: 0.5em;
+  font-family: cursive;
 }
 
 .register-page .form .title {
@@ -94,7 +97,7 @@ body {
   display: flex;
   align-items: center;
   padding-left: 30px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .register-page .form .title::before,
@@ -106,21 +109,21 @@ body {
   border-radius: 50%;
   left: 0px;
   background-color: royalblue;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .register-page .form .title::before {
   width: 18px;
   height: 18px;
   background-color: royalblue;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .register-page .form .title::after {
   width: 18px;
   height: 18px;
   animation: pulse 1s linear infinite;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .register-page .form .message,
@@ -128,14 +131,14 @@ body {
   color: rgba(88, 87, 87, 0.822);
   font-size: 14px;
 }
-.register-page .form .todo-link{
-	color: #007bff;
-	font-weight: 700;
+.register-page .form .todo-link {
+  color: #007bff;
+  font-weight: 700;
 }
-.register-page .bord-bottom{
-	box-sizing: border-box;
-	border-bottom: 2px solid gainsboro;
-	margin: 1em 0;
+.register-page .bord-bottom {
+  box-sizing: border-box;
+  border-bottom: 2px solid gainsboro;
+  margin: 1em 0;
 }
 
 .register-page .form .signin {
@@ -150,7 +153,7 @@ body {
 
 .register-page .form .signin .a:hover {
   text-decoration: underline royalblue;
-  transition: .3s;
+  transition: 0.3s;
   scale: 1.1;
 }
 
@@ -158,12 +161,12 @@ body {
   display: flex;
   width: 100%;
   gap: 6px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .register-page .form label {
   position: relative;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .register-page .form label .input {
@@ -173,7 +176,7 @@ body {
   border: 1px solid rgba(105, 105, 105, 0.397);
   border-radius: 10px;
   font-weight: 700;
-  transition: .3s;
+  transition: 0.3s;
   color: #000;
   font-size: 1.4em;
 }
@@ -221,21 +224,21 @@ body {
 .register-page .form .submit:hover {
   background-color: rgb(36, 75, 192);
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.register-page .form .or-group{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 1em 0;
+.register-page .form .or-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
 }
-.register-page .form .or{
-	color: grey;
+.register-page .form .or {
+  color: grey;
 }
-.register-page .border-bottom{
-	box-sizing: border-box;
-	border-bottom: 2px solid gainsboro;
-	width: 140px;
+.register-page .border-bottom {
+  box-sizing: border-box;
+  border-bottom: 2px solid gainsboro;
+  width: 140px;
 }
 
 @keyframes pulse {
@@ -250,27 +253,26 @@ body {
   }
 }
 
-
 /* <---------Login page---------> */
 .login-page {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #007bff;
 }
-.login-page .app-name{
-	color: #007bff;
-	display: flex;
-	gap: 20px;
+.login-page .app-name {
+  color: #007bff;
+  display: flex;
+  gap: 20px;
 }
-.login-page .register-logo{
-	width: 40px;
-	height: 40px;
+.login-page .register-logo {
+  width: 40px;
+  height: 40px;
 }
-.login-page .p{
-	margin-top: 0.5em;
-	font-family: cursive;
+.login-page .p {
+  margin-top: 0.5em;
+  font-family: cursive;
 }
 .wrapper {
   width: 420px;
@@ -290,16 +292,15 @@ body {
   font-size: 36px;
   text-align: center;
 }
-.login-page .bord-bottom{
-	box-sizing: border-box;
-	border-bottom: 2px solid gainsboro;
-	margin: 1em 0;
+.login-page .bord-bottom {
+  box-sizing: border-box;
+  border-bottom: 2px solid gainsboro;
+  margin: 1em 0;
 }
 .wrapper .input-box {
   position: relative;
   width: 100%;
   height: 50px;
-
   margin: 30px 0;
 }
 .login-page .input-box input {
@@ -337,11 +338,10 @@ body {
 .remember-forgot a:hover {
   text-decoration: underline;
 }
-.wrapper .bttn {
+.login-button {
   width: 100%;
   max-width: 500px;
-  transition: .3s;
-  height: 45px;
+  transition: 0.3s;
   background: #007bff;
   border: none;
   outline: none;
@@ -353,7 +353,7 @@ body {
   font-weight: 600;
   margin-top: 10px;
 }
-.wrapper .bttn:active{
+.login-button:active {
   scale: 0.9;
 }
 .wrapper .register-link {
@@ -370,36 +370,22 @@ body {
   text-decoration: underline;
 }
 
-.login-page .form .or{
-	color: grey ;
+.login-page .form .or {
+  color: grey;
 }
-.login-page .border-bottom{
-	margin-top: -20px;
-	box-sizing: border-box;
-	border-bottom: 2px solid gainsboro;
-	width: 140px;
+.login-page .border-bottom {
+  margin-top: -20px;
+  box-sizing: border-box;
+  border-bottom: 2px solid gainsboro;
+  width: 140px;
 }
-
-
-@media (max-width: 600px) {
-	.login-page {
-	  padding: 20px;
-	}
-  
-	.wrapper {
-	  width: 100%;
-	  max-width: 100%; /* Fill the screen on smaller devices */
-	  padding: 15px;
-	  box-shadow: none;
-	}
-  }
 
 /* <---------Forgot Password page---------> */
-.forgot-password{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
+.forgot-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* <---------Settings page---------> */
@@ -419,42 +405,43 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .settings.visible {
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
-.settings .cancel{
+.settings .cancel {
   font-size: 35px;
-  transition: .3s;
+  transition: 0.3s;
 }
-.settings .cancel:hover{
+.settings .cancel:hover {
   color: #0056b3;
   scale: 1.1;
   cursor: pointer;
 }
-.settings .logo{
+.settings .logo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
-.settings h3, .settings summary {
+.settings h3,
+.settings summary {
   font-size: 18px;
   font-weight: bold;
 }
-.bars{
+.bars {
   background-color: #fff;
   font-size: 2em;
   padding: 0.3em;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   color: #000;
   border-radius: 50%;
   margin-bottom: -0.1em;
 }
-.bars:hover{
+.bars:hover {
   color: #0056b3;
   scale: 1.1;
 }
@@ -462,12 +449,12 @@ body {
 .settings summary {
   cursor: pointer;
   margin-bottom: 10px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .settings summary:hover {
   color: #0056b3;
-  scale: 1.1
+  scale: 1.1;
 }
 
 .settings details {
@@ -493,28 +480,7 @@ body {
   background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-  .settings {
-    position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  transform: translateX(-100%);
-  width: 250px;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #007bff;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
-  }
-}
-
-.logout-btn{
+.logout-btn {
   /* display: flex;
   align-items: center;
   justify-content: flex-start; */
@@ -524,13 +490,13 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
   background-color: rgb(255, 65, 65);
 }
 
 /* <---------Greeting page----------> */
-.greetings{
+.greetings {
   box-sizing: border-box;
   position: fixed;
   border: none;
@@ -547,102 +513,22 @@ body {
   width: 100%;
   height: 20vh;
 }
-@media (max-width: 1100px){
-  .greetings{
-    height: 25vh;
-  }
-}
-@media (min-width: 911px){
-  .greetings{
-    height: 19vh;
-  }
-}
-@media (max-width: 951px){
-  .greetings{
-    height: 18vh;
-  }
-}
-@media (max-width: 768px) {
-  .greetings .logo{
-   display: none;
-  }
-  .greeting-page .greetings .greeting-text{
-    text-align: center;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: Georgia;
-    line-height: 40px;
-  }
-  .greeting-page .greetings .greeting-quote{
-    font-size: 10px;
-  }
-  .greetings{
-    display: block;
-    height: 15vh;
-  }
-  .greeting-date{
-    display: flex !important;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-    font-size: 20px !important;
-  }
-  .file-uploads{
-    display: block !important;
-  }
-}
-@media (max-width: 668px){
-  .greeting-page .greetings .greeting-text{
-    margin: 0 !important;
-    font-size: 30px !important;
-    line-height: 20px !important;
-  }
-  .greeting-page .greetings .greeting-quote{
-    margin-top: 0.7em !important;
-    font-size: 8.7px !important;
-    line-height: 10px !important;
-  }
-}
-@media (max-width: 558px) {
-.greetings{
-  height: 19vh;
-}
-  .greeting-date{
-    display: flex !important;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-    font-size: 12px;
-  }
-}
-@media (max-width: 380px) {
-  .fixed-bottom-form{
-    display: block !important;
-  }
-  .greeting-date{
-    display: flex !important;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-    font-size: 15px !important;
-  }
-}
 
-.greeting-page .greetings .logo{
+.greeting-page .greetings .logo {
   width: 60px;
   height: 60px;
   border-radius: 50%;
 }
-.greeting-page .greetings .profile{
+.greeting-page .greetings .profile {
   display: block;
 }
 
-.greeting-page .greetings .greeting-text{
+.greeting-page .greetings .greeting-text {
   font-size: 45px;
   font-weight: 700;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.greeting-page .greetings .greeting-quote{
+.greeting-page .greetings .greeting-quote {
   text-transform: uppercase;
   text-align: center;
   color: gainsboro;
@@ -653,17 +539,17 @@ body {
   text-wrap: wrap;
 }
 /* <----------Todo List Page----------> */
-.todoList-container{
+.todoList-container {
   /* display: none; */
   margin: 10.5em 0;
   box-sizing: border-box;
   border: none;
   /* overflow-y: auto;  */
-  max-height: 100vh; 
-  width: 100%; 
-  padding: 10px; 
+  max-height: 100vh;
+  width: 100%;
+  padding: 10px;
 }
- 
+
 .textInputWrapper {
   position: relative;
   width: 380px;
@@ -781,62 +667,63 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #2d3748; 
-  padding: 10px 20px; 
+  background-color: #2d3748;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Add shadow for a raised effect */
 }
-.task-input{
-  transition: .3s;
+.task-input {
+  transition: 0.3s;
   width: 100%;
   max-width: 500px;
+  text-transform: capitalize;
 }
-.todo-list .task-input:focus{
-  transition: .3s;
+.todo-list .task-input:focus {
+  transition: 0.3s;
   border-radius: 10px;
 }
-.todo-list .send-icon{
+.todo-list .send-icon {
   font-size: 40px;
   color: #007bff;
-  transition: .3s;
+  transition: 0.3s;
 }
-.todo-list .send-icon:hover{
-  transition: .3s;
+.todo-list .send-icon:hover {
+  transition: 0.3s;
   color: #0056b3;
   transform: rotate(45deg);
   scale: 1.1;
 }
-.todo-list .send-icon:focus{
+.todo-list .send-icon:focus {
   scale: 0.9;
 }
-.todo-list .update-icon{
+.todo-list .update-icon {
   font-size: 40px;
   color: #007bff;
-  transition: .3s;
+  transition: 0.3s;
   background-color: gainsboro;
   border-radius: 50%;
   padding: 10px;
 }
-.todo-list .update-icon:hover{
-  transition: .3s;
+.todo-list .update-icon:hover {
+  transition: 0.3s;
   color: #0056b3;
   scale: 1.1;
 }
-.todo-list .update-icon:focus{
+.todo-list .update-icon:focus {
   scale: 0.9;
   color: transparent;
 }
-.todo-task-list{
+.todo-task-list {
   background-color: #292828;
   padding: 10px;
   border-radius: 10px;
   margin: 10px 4px;
-  transition: .3s;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Add shadow for a raised effect */
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
 }
-.todo-task-list:hover{
+.todo-task-list:hover {
   background-color: #2d3748;
   scale: 1.01;
   cursor: pointer;
@@ -871,26 +758,26 @@ body {
   stroke-dashoffset: -262.2723388671875;
   scale: 0.9;
 }
- .completed-container input:hover ~ svg .path {
+.completed-container input:hover ~ svg .path {
   stroke-dasharray: 70.5096664428711 9999999;
   stroke-dashoffset: -262.2723388671875;
 }
-.completed-container input:focus ~ svg .path{
+.completed-container input:focus ~ svg .path {
   scale: 0.9;
 }
-details[open] summary{
+details[open] summary {
   margin-bottom: 10px;
 }
 
 /* ----COMPLETED TODOS---- */
-.completed-todos{
+.completed-todos {
   /* display: none; */
   box-sizing: border-box;
   border: none;
-  overflow-y: auto; 
-  max-height: 460px; 
-  width: 100%; 
-  padding: 10px; 
+  overflow-y: auto;
+  max-height: 460px;
+  width: 100%;
+  padding: 10px;
 }
 
 .completed-todos::-webkit-scrollbar {
@@ -912,19 +799,19 @@ details[open] summary{
 .completed-todos::-webkit-scrollbar-thumb:active {
   background: #007bff;
 }
-.completed-task-list{
+.completed-task-list {
   background-color: #2d3748;
   padding: 10px;
   border-radius: 0px;
   margin: 2px 4px;
-  transition: .3s;
+  transition: 0.3s;
 }
-.completed-task-list:hover{
+.completed-task-list:hover {
   background-color: #4a5568;
 }
 
 /* <---------FILE UPLOAD PAGE-----------> */
-.file-uploads{
+.file-uploads {
   margin-top: 8.7em;
   display: flex;
   justify-content: space-between;
@@ -949,11 +836,15 @@ details[open] summary{
   background: #007bff;
 }
 .progress-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background-color: #e0e0e0; /* Background color for the container */
   border-radius: 4px;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 30px;
+  z-index: 1000;
 }
 
 .progress-bar {
@@ -966,31 +857,31 @@ details[open] summary{
   border-radius: 4px;
 }
 
-.file-uploaded{
+.file-uploaded {
   box-sizing: border-box;
   border: none;
   border-left: 2px solid #007bff;
   /* overflow-y: auto;  */
-  max-height: 100vh; 
+  max-height: 100vh;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 10px; 
+  padding: 10px;
 }
-.upload-form{
+.upload-form {
   margin: 2em;
   /* position: fixed; */
   box-sizing: border-box;
   border: none;
   min-width: 50vh;
   /* overflow-y: auto;  */
-  max-height: 100vh; 
+  max-height: 100vh;
 }
 .file-upload .input {
   max-width: 190px;
   display: none;
 }
-.src{
+.src {
   box-sizing: border-box;
   border: transparent;
   background-color: #404040;
@@ -1122,12 +1013,12 @@ details[open] summary{
   fill: #007bff;
   stroke: #007bff;
 }
-.uploaded-files{
+.uploaded-files {
   width: 500px;
   height: 350px;
   margin: 1em;
 }
-.uploaded-files-container{
+.uploaded-files-container {
   background-color: #2d2d2d;
   border-radius: 10px;
   padding: 1em;
@@ -1135,3 +1026,126 @@ details[open] summary{
 }
 
 /* <--------------RESPONSIVENESS--------------> */
+@media (max-width: 1100px) {
+  .greetings {
+    height: 25vh;
+  }
+}
+
+@media (min-width: 911px) {
+  .greetings {
+    height: 19vh;
+  }
+}
+
+@media (max-width: 951px) {
+  .greetings {
+    height: 18vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .greetings .logo {
+    display: none;
+  }
+  .greeting-page .greetings .greeting-text {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Georgia;
+    line-height: 40px;
+  }
+  .greeting-page .greetings .greeting-quote {
+    font-size: 10px;
+  }
+  .greetings {
+    display: block;
+    height: 15vh;
+  }
+  .greeting-date {
+    display: flex !important;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    font-size: 20px !important;
+  }
+  .file-uploads {
+    display: block !important;
+  }
+}
+
+@media (max-width: 668px) {
+  .greeting-page .greetings .greeting-text {
+    margin: 0 !important;
+    font-size: 30px !important;
+    line-height: 20px !important;
+  }
+  .greeting-page .greetings .greeting-quote {
+    margin-top: 0.7em !important;
+    font-size: 8.7px !important;
+    line-height: 10px !important;
+  }
+}
+
+@media (max-width: 558px) {
+  .greetings {
+    height: 19vh;
+  }
+  .greeting-date {
+    display: flex !important;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .fixed-bottom-form {
+    display: block !important;
+  }
+  .task-input{
+    margin-top: 1em;
+  }
+  .greeting-date {
+    display: flex !important;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .settings {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #007bff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 20px;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    box-shadow: none;
+  }
+}

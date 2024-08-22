@@ -19,7 +19,6 @@ const Login = () => {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
-      // Send user data to backend
       const res = await axios.post("https://todolist-server-api.onrender.com/todoList/google-login", {
         displayName: user.displayName,
         email: user.email,
@@ -53,9 +52,9 @@ const Login = () => {
         navigate("/todoList/todo-list");
       } catch (err) {
         console.error(err.response?.data?.msg || err.message);
-        toast.error(err.response?.data?.msg || "An error occurred. Please try again.");
+        toast.error(err.message || "An error occurred. Please try again.");
       } finally {
-        setLoading(false); // Reset loading state
+        setLoading(false);
       }
     },
   });
@@ -98,20 +97,19 @@ const Login = () => {
           Forgot Password?
         </NavLink>
     </div>
-    <button
-            type="submit"
-            className="bttn "
-            disabled={loading}
-          >
-            {loading ? <Loader /> : "Login"}
-          </button>
+    
+          {/* <input type="submit" value={loading ? <Loader /> : "Login"}  /> */}
+          <button
+                  type="submit"
+                  disabled={loading}
+                  className="items-center cursor-pointer justify-center w-full px-6 py-1 text-center text-white duration-200 bg-blue-600 border-2 border-blue-600 rounded-full inline-flex focus:outline-none focus-visible:outline-blue-600 focus-visible:ring-blue-600 font-bold text-[19px] hover:bg-blue-700"
+                >{loading ? <Loader /> : "Login"}</button>
     <div className="button-group">
     <div className="flex justify-between">
       <div className='border-bottom'></div>
       <div className='or text-center text-gray-400'>OR</div>
       <div className='border-bottom'></div>
     </div>
-    {/* <button className='button' >Sign in with Google</button> */}
    <button
             className="mt-5 flex items-center justify-center py-2 px-15 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
             onClick={handleGoogleLogin}

@@ -52,7 +52,7 @@ const TodoList = () => {
 
       if (res.data && res.data.todos) {
         setTodos(res.data.todos);
-        setFilteredTodos(res.data.todos); 
+        setFilteredTodos(res.data.todos);
       } else {
         setTodos([]);
         setFilteredTodos([]);
@@ -83,8 +83,8 @@ const TodoList = () => {
     e.preventDefault();
 
     if (!title || !description) {
-        toast.warning("Both title and description are required to submit a todo");
-        return;
+      toast.warning("Both title and description are required to submit a todo");
+      return;
     }
 
     const newTodo = { title, description };
@@ -92,7 +92,7 @@ const TodoList = () => {
     try {
       const token = localStorage.getItem("token");
       const headers = {
-        'Access-Control-Allow-Origin': '*',
+        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       };
@@ -113,29 +113,30 @@ const TodoList = () => {
       console.error(err.response ? err.response.data : err.message);
       toast.error(err.message);
     }
-};
-
+  };
 
   const onDelete = async (id) => {
-    const confirmed = window.confirm("Are you sure you want to delete this todo?");
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this todo?"
+    );
     if (confirmed) {
-    try {
-      const token = localStorage.getItem("token");
-      await axios.delete(`${uri}/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setTodos(todos.filter((todo) => todo._id !== id));
-      setFilteredTodos(filteredTodos.filter((todo) => todo._id !== id));
-      toast.success("Todo deleted successfully");
-    } catch (err) {
-      console.error(err.response ? err.response.data : err.message);
-      toast.error(err.message);
+      try {
+        const token = localStorage.getItem("token");
+        await axios.delete(`${uri}/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setTodos(todos.filter((todo) => todo._id !== id));
+        setFilteredTodos(filteredTodos.filter((todo) => todo._id !== id));
+        toast.success("Todo deleted successfully");
+      } catch (err) {
+        console.error(err.response ? err.response.data : err.message);
+        toast.error(err.message);
+      }
+    } else {
+      toast.info("Todo deletion canceled");
     }
-  } else {
-    toast.info("Todo deletion canceled");
-  }
   };
 
   const onEdit = (todo) => {
@@ -150,7 +151,7 @@ const TodoList = () => {
     try {
       const token = localStorage.getItem("token");
       const todo = todos.find((todo) => todo._id === id);
-  
+
       const isCompleted = todo.completed;
       await axios.put(
         `${uri}/${id}`,
@@ -162,20 +163,19 @@ const TodoList = () => {
           },
         }
       );
-  
+
       if (isCompleted) {
         toast.warning("Task marked as incomplete.");
       } else {
         toast.success("Way to go, you've completed a task!");
       }
-  
+
       fetchTodos();
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
       toast.error(err.message);
     }
   };
-  
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value.toLowerCase();
@@ -194,9 +194,9 @@ const TodoList = () => {
         <div className="flex justify-between">
           <h2
             onClick={() => setActiveSection("todoList")}
-            className={`cursor-pointer text-3xl ${
+            className={`cursor-pointer lg:text-3xl sm:text-sm ${
               activeSection === "todoList"
-                ? "text-blue-600 text-3xl font-bold"
+                ? "text-blue-600 lg:text-3xl font-bold sm:text-sm"
                 : ""
             }`}
           >
@@ -213,9 +213,9 @@ const TodoList = () => {
           </div>
           <h2
             onClick={() => setActiveSection("completedTodos")}
-            className={`cursor-pointer text-2xl ${
+            className={`cursor-pointer lg:text-2xl sm:text-sm ${
               activeSection === "completedTodos"
-                ? "text-blue-600 text-2xl font-bold"
+                ? "text-blue-600 lg:text-2xl font-bold sm:text-sm"
                 : ""
             }`}
           >
@@ -261,7 +261,9 @@ const TodoList = () => {
                                   Added on:{" "}
                                   {new Date(todo.createdAt).toLocaleString()}
                                 </p>
-                                <h3 className="font-bold text-2xl">{todo.title}</h3>
+                                <h3 className="font-bold text-2xl">
+                                  {todo.title}
+                                </h3>
                               </div>
                             </div>
                             <div className="flex space-x-2">
@@ -318,12 +320,7 @@ const TodoList = () => {
         )}
       </div>
 
-      {/* <div>
-        <NavLink to="/todoList/upload">My Files</NavLink>
-      </div> */}
-
       <form onSubmit={onSubmit} className="fixed-bottom-form">
-        
         <input
           className="bg-neutral-600 text-white font-bold font-mono ring-1 ring-neutral-600 transition ease-in outline-none duration-300 placeholder:text-neutral-300 placeholder:opacity-50 rounded-full px-4 py-2 shadow-md focus:shadow-md task-input dark:shadow-md dark:shadow-neutral-700"
           autoComplete="off"
@@ -334,26 +331,26 @@ const TodoList = () => {
           type="text"
           onKeyDown={handleTitleKeyDown}
         />
-        
+
         <div className="flex gap-2">
-  <input
-          className="bg-neutral-600 text-white font-bold font-mono ring-1 ring-neutral-600 transition ease-in outline-none duration-300 placeholder:text-neutral-300 placeholder:opacity-50 rounded-full px-4 py-2 shadow-md focus:shadow-md task-input dark:shadow-md dark:shadow-neutral-700 w-[400px]"
-          autoComplete="off"
-          type="text"
-          name="description"
-          value={description}
-          onChange={onChange}
-          placeholder="Task Description"
-          ref={descriptionInputRef}
-          onKeyDown={handleDescriptionKeyDown}
-        />
-        <button type="submit">
-          {editId ? (
-            <FaArrowUpLong className="update-icon" />
-          ) : (
-            <RiSendPlaneFill className="send-icon" />
-          )}
-        </button>
+          <input
+            className="bg-neutral-600 text-white font-bold font-mono ring-1 ring-neutral-600 transition ease-in outline-none duration-300 placeholder:text-neutral-300 placeholder:opacity-50 rounded-full px-4 py-2 shadow-md focus:shadow-md task-input dark:shadow-md dark:shadow-neutral-700 w-[400px]"
+            autoComplete="off"
+            type="text"
+            name="description"
+            value={description}
+            onChange={onChange}
+            placeholder="Task Description"
+            ref={descriptionInputRef}
+            onKeyDown={handleDescriptionKeyDown}
+          />
+          <button type="submit">
+            {editId ? (
+              <FaArrowUpLong className="update-icon" />
+            ) : (
+              <RiSendPlaneFill className="send-icon" />
+            )}
+          </button>
         </div>
       </form>
     </div>

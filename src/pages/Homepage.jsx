@@ -52,18 +52,11 @@ const Homepage = () => {
         className="relative flex h-full items-start justify-start p-8 bg-cover bg-center text-white z-20"
         style={{ backgroundImage: `url('https://th.bing.com/th/id/OIG4.iexbo93Bzhd3tka7ti3a?pid=ImgGn')` }}
       >
-        {/* <button
-          onClick={() => navigate('/todoList/register')}
-          className="absolute top-4 right-4 px-4 py-2 me-10 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-300 z-30"
-        >
-          Skip
-        </button> */}
         <div className="text-left p-8 bg-black/50 rounded-lg w-full md:w-3/4 z-30">
           <h2 className="text-5xl md:text-6xl font-bold">Get Started Today</h2>
           <p className="text-2xl md:text-3xl mt-4 mb-6">Join us and take control of your tasks like never before.</p>
         </div>
         
-        {/* Button positioned at the bottom center */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-30">
           <button 
             onClick={() => navigate('/todoList/register')}

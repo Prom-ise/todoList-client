@@ -18,7 +18,7 @@ const FileUpload = () => {
   const [audioFiles, setAudioFiles] = useState([]);
   const [videoFiles, setVideoFiles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filePreviews, setFilePreviews] = useState([]); // To hold file preview URLs
+  const [filePreviews, setFilePreviews] = useState([]);
   const [activeSection, setActiveSection] = useState("images");
   const [uploadProgress, setUploadProgress] = useState(0);
 
@@ -69,8 +69,8 @@ const FileUpload = () => {
       window.location.reload();
       toast.success("File Uploaded Successfully");
     } catch (err) {
-      console.error(err.response ? err.response.data : err.message);
-      toast.error(err.message);
+      console.error(err.response?.data?.msg || err.message);
+      toast.error("Error saving file");
       setUploadProgress(0);
     }
   };
@@ -108,8 +108,8 @@ const FileUpload = () => {
       } catch (err) {
         localStorage.removeItem("token");
         navigate("/todoList/login");
-        console.error(err.response ? err.response.data : err.message);
-        toast.error(err.message);
+        console.error(err.response?.data?.msg || err.message);
+        toast.error("Error fetching file try login again");
       } finally {
         setLoading(false);
       }
@@ -129,7 +129,6 @@ const FileUpload = () => {
           },
         });
   
-        // Remove the deleted file from the state
         setImages(images.filter((file) => file._id !== fileId));
         setAudioFiles(audioFiles.filter((file) => file._id !== fileId));
         setVideoFiles(videoFiles.filter((file) => file._id !== fileId));

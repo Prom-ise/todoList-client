@@ -13,14 +13,13 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
   const [isVerified, setIsVerified] = useState(false);
-  const [isStep1Complete, setIsStep1Complete] = useState(false); // New state for step 1 completion
+  const [isStep1Complete, setIsStep1Complete] = useState(false);
 
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
-      // Send user data to backend
       const res = await axios.post("https://todolist-server-api.onrender.com/todoList/google-login", {
         displayName: user.displayName,
         email: user.email,
@@ -38,14 +37,13 @@ const Register = () => {
     }
   };
 
-  // Formik setup with Yup validation schema
   const formik = useFormik({
     initialValues: {
       firstName: "",
       lastName: "",
       email: "",
       password: "",
-      verificationCode: "", // Add verification code here for step 2
+      verificationCode: "", 
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -59,10 +57,10 @@ const Register = () => {
       email: Yup.string()
         .email("Invalid email address")
         .required("Valid email Required")
-        .matches(/[.com]/, "Must contain .com"),
+        .matches(/[.com]/, "Invalid email"),
       password: Yup.string()
         .required("Password Required")
-        .min(8, "Must be 8 characters or more")
+        .min(7, "Must be 7 characters or more")
         .matches(/[a-z]/, "Must contain at least one lowercase letter")
         .matches(/[A-Z]/, "Must contain at least one uppercase letter")
         .matches(/[0-9]/, "Must contain at least one number")
@@ -78,10 +76,10 @@ const Register = () => {
         const res = await axios.post("https://todolist-server-api.onrender.com/todoList/register", newUser);
         console.log(res.data);
         toast.success("Registration successful! Check your email for the verification code.");
-        setIsStep1Complete(true); // Move to step 2
+        setIsStep1Complete(true);
       } catch (err) {
         console.error(err.response?.data?.msg || err.message);
-        toast.error(err.response?.data?.msg || "Registration failed. Please try again.");
+        toast.error(err.message || "Registration failed. Please try again.");
       } finally {
         setLoading(false);
       }
@@ -100,8 +98,8 @@ const Register = () => {
       toast.success("Email verified successfully! You can now log in.");
       navigate("/todoList/login");
     } catch (err) {
-      console.error(err.response.data);
-      toast.error(err.response.data);
+      console.error(err.response.data || err.message);
+      toast.error(err.response.data || err.message);
     }
   };
 

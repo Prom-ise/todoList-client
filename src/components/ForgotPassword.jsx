@@ -8,7 +8,7 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [step, setStep] = useState(1); // To track which step of the process we're on
+  const [step, setStep] = useState(1);
 
   const onEmailSubmit = async (e) => {
     e.preventDefault();
@@ -19,10 +19,10 @@ const ForgotPassword = () => {
       );
       console.log(res.data);
       toast.success("Verification code sent to your email.");
-      setStep(2); // Move to the next step
+      setStep(2);
     } catch (err) {
-      console.error(err.response.data);
-      toast.error(err.response.data);
+      console.error(err.response?.data?.msg || err.message);
+      toast.error(err.message || "An error occured in sending your email");
     }
   };
 
@@ -36,46 +36,13 @@ const ForgotPassword = () => {
       console.log(res.data);
       toast.success("Password reset successfully!");
       navigate("/todoList/login");
-      // Optionally redirect to login page or reset the form
     } catch (err) {
-      console.error(err.response.data);
-      toast.error(err.response.data.msg || "An error occurred");
+      console.error(err.response?.data?.msg || err.message);
+      toast.error(err.response?.data?.msg || "An error occurred, pls try again");
     }
   };
 
   return (
-    // <div className="forgot-password">
-    //   {step === 1 ? (
-    //     <form onSubmit={onEmailSubmit}>
-    //       <input
-    //         type="email"
-    //         placeholder="Enter your email"
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //         required
-    //       />
-    //       <input type="submit" value="Send Verification Code" />
-    //     </form>
-    //   ) : (
-    //     <form onSubmit={onVerifyAndReset}>
-    //       <input
-    //         type="text"
-    //         placeholder="Enter verification code"
-    //         value={verificationCode}
-    //         onChange={(e) => setVerificationCode(e.target.value)}
-    //         required
-    //       />
-    //       <input
-    //         type="password"
-    //         placeholder="Enter new password"
-    //         value={newPassword}
-    //         onChange={(e) => setNewPassword(e.target.value)}
-    //         required
-    //       />
-    //       <input type="submit" value="Reset Password" />
-    //     </form>
-    //   )}
-    // </div>
   <div className="forgot-password">
   <section>
     <div className="bg-gray-400 h-screen w-screen flex justify-center min-h-[100vh] items-center">
@@ -97,6 +64,7 @@ const ForgotPassword = () => {
                   className="block w-full px-6 py-3 text-blue-600 bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  autoFocus
                   required
                 />
               </div>
@@ -104,7 +72,7 @@ const ForgotPassword = () => {
                 <input
                   type="submit"
                   value="Send Verification Code"
-                  className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-blue-600 border-2 border-blue-600 rounded-full inline-flex hover:bg-transparent hover:border-blue-600 hover:text-blue-600 focus:outline-none focus-visible:outline-blue-600 focus-visible:ring-blue-600 font-bold text-2xl"
+                  className="items-center cursor-pointer justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-blue-600 border-2 border-blue-600 rounded-full inline-flex hover:bg-transparent hover:border-blue-600 hover:text-blue-600 focus:outline-none focus-visible:outline-blue-600 focus-visible:ring-blue-600 font-bold text-2xl"
                 />
               </div>
               
@@ -132,6 +100,7 @@ const ForgotPassword = () => {
                   className="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
+                  autoFocus
                   required
                 />
               </div>
@@ -139,16 +108,16 @@ const ForgotPassword = () => {
                 <input
                   type="submit"
                   value="Reset Password"
-                  className="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
+                  className="items-center cursor-pointer justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
                 />
               </div>
             </div>
           </form>
         )}
+        <button className="btn bg-rose-500 mt-5 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"><NavLink to='/todoList/login'>Cancel</NavLink></button>
       </div>
     </div>
   </section>
-  <button className="btn bg-rose-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"><NavLink to='/todoList/login'>Cancel</NavLink></button>
 </div>
 
   );
