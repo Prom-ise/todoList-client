@@ -9,6 +9,7 @@ This Todo List application is designed to help users efficiently manage their da
 - **Task Completion:** Mark tasks as completed and track your progress.
 - **User Authentication:** Secure login system with options for Google Sign-In.
 - **Responsive Design:** Fully responsive design that works on both desktop and mobile devices.
+- **User-Friendly Interface**: Simple and intuitive UI for effortless task management.
 
 ## Technologies Used
 - **Frontend:** React.jsx
