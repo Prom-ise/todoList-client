@@ -274,7 +274,7 @@ const FileUpload = () => {
           </div>
         </div>
 
-        <div className="file-uploaded">
+        <div className="file-uploaded sm:mt-[2.1em]">
           <div className="uploaded-image-container">
             <div className="flex gap-[20px] justify-between">
             <h2
