@@ -21,7 +21,7 @@ This Todo List application is designed to help users efficiently manage their da
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Prom-ise/todo-list-app.git
+    git clone https://github.com/Prom-ise/todoList-client.git
     ```
 2. Navigate to the project directory:
     ```bash
@@ -38,7 +38,7 @@ This Todo List application is designed to help users efficiently manage their da
 
 ## Usage
 - Visit `(https://todolist-client-0nr0.onrender.com/)` to start using the Todo List application.
-- Register or log in using your Google account and you can also create your account using your email.
+- Register with your email or log in using your Google account.
 - Add tasks, set priorities, and mark them as completed.
 
 ## Contributing
