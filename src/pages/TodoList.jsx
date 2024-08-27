@@ -6,7 +6,7 @@ import Greeting from "./Greeting";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { MdEdit, MdDelete } from "react-icons/md";
-import Loader from "./Loader"; 
+import Loader from "../components/Loader" 
 
 const TodoList = () => {
   const uri = "https://todolist-server-api.onrender.com/todoList/todos";
