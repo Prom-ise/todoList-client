@@ -104,7 +104,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register-page">
+    <div className="register-page shadow-md">
       {!isStep1Complete ? (
         <form className="form" onSubmit={formik.handleSubmit}>
           <div className="app-name">

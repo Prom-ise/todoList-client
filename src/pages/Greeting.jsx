@@ -213,11 +213,11 @@ const Greeting = () => {
         <div className="greeting">
           <div className="greeting-text">
             {userData ? (
-              <p className="greeting-text">{`${greeting}, ${
+              <p className="greeting-text text-center">{`${greeting}, ${
                 userData?.firstName || userData.email || "User"
               }`}</p>
             ) : (
-              <p className="greeting-text">{`${greeting}, User`}</p>
+              <p className="greeting-text text-center">{`${greeting}, User`}</p>
             )}
           </div>
           <p className="greeting-quote">" {dailyQuote}"</p>

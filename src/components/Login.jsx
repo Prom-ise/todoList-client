@@ -60,7 +60,7 @@ const Login = () => {
   });
 
   return (
-    <div className="login-page">
+    <div className="login-page shadow-lg">
       <div className="wrapper">
   <form onSubmit={formik.handleSubmit}>
   <div className="app-name"><img src={logo} className="register-logo" alt="logo pic" /><p className="p">TODO LIST APPLICATION</p></div>

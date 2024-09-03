@@ -13,7 +13,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <ToastContainer />
+      <ToastContainer className={"fixed"} />
       <Routes>
         <Route path="/" element={<Navigate to="/todoList/homepage" />} />
         <Route path="/todoList/homepage" element={<Homepage />} />
